@@ -198,8 +198,26 @@ namespace WF230225
             // Проверка данных в зависимости от номера столбца
             switch (e.ColumnIndex)
             {
+                case 1: // Start
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue as string)) 
+                        err = "Укажите начальную точку маршрута";
+                    break;
 
-            } // switch
+                case 2: // Finish
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue as string))
+                        err = "Укажите конечную точку маршрута";
+                    break;
+
+                case 3: // Code
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue as string)) 
+                        err = "Укажите код маршрута";
+                    break;
+
+                case 4: // Length
+                    if ((int)(e.FormattedValue) <= 0)
+                        err = "Недопустимая протяженность маршрута";
+                    break;
+            }
 
             // вывод сообщения об ошибке
             dgvItems.Rows[e.RowIndex].ErrorText = err;
@@ -251,23 +269,51 @@ namespace WF230225
         // обновление комбобоксов выборки
         private void UpdateSelectionComboBoxes()
         {
-            
+            // диапазон протяженности
+            cmbxLengthFrom.Items.Clear();
+            cmbxLengthFrom.Items.AddRange(_controller.GetRangeSteps().ToArray()[..-1]);
+
+            cmbxLengthTo.Items.Clear();
+            cmbxLengthTo.Items.AddRange(_controller.GetRangeSteps().ToArray()[1..]);
+
+            // пункты
+            cmbxPoint.Items.Clear();
+            cmbxPoint.Items.AddRange(_controller.GetPoints());
         }
 
-        // выборка
-        private void SelectBy(object sender, EventArgs e)
+        // выборка по диапазону протяженности
+        private void SelectByLengthRange(object sender, EventArgs e)
         {
-            if (sender is not ToolStripComboBox)
-                return;
+            int from, to;
 
-            var cmbx = sender as ToolStripComboBox;
-
-            dataGridSelected.DataSource = null!;
-            dataGridSelected.DataSource = cmbx.Tag switch
+            if (!int.TryParse(cmbxLengthFrom.Text, out from))
             {
-                _ => new()
-            };
+                cmbxLengthFrom.Focus();
+                return;
+            }
 
+            if (!int.TryParse(cmbxLengthTo.Text, out to))
+            {
+                cmbxLengthTo.Focus();
+                return;
+            }
+
+            dataGridSelected.DataSource = _controller.SelectByLengthRange(from, to);
+
+            tabs.SelectTab(2);
+        }
+
+
+        // выборка по диапазону протяженности
+        private void SelectByЗщште(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbxPoint.Text))
+            {
+                cmbxPoint.Focus();
+                return;
+            }
+
+            dataGridSelected.DataSource = _controller.SelectByPoint(cmbxPoint.Text);
 
             tabs.SelectTab(2);
         }
@@ -328,6 +374,7 @@ namespace WF230225
 
                 dgv.Font = fontDialog1.Font;
             }
+
 
         }
 

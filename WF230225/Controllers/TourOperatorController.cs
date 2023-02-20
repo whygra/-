@@ -151,6 +151,55 @@ namespace WF230225.Controllers
         #endregion
 
         #region выборка
+        // минимальная протяженность (для выборки про протяженности)
+        int GetMinLen()
+        {
+            int minLen = 0;
+            foreach (TourRoute route in Items)
+                if (route.Length < minLen) minLen = route.Length;
+            return minLen;
+        }
+
+        // максимальная протяженность (для выборки про протяженности)
+        int GetMaxLen()
+        {
+            int maxLen = 0;
+            foreach (TourRoute route in Items)
+                if (route.Length > maxLen) maxLen = route.Length;
+            return maxLen;
+        }
+
+        // массив строковых представлений чисел
+        // в диапазоне от минимальной до максимальной протяженности и кратных 10
+        public string[] GetRangeSteps()
+        {
+            int minLen = GetMinLen();
+            int maxLen = GetMaxLen();
+
+            List<string> result = new();
+
+            // минимальное значение
+            result.Add($"{minLen}");
+            // промежуточные значение, кратные десяти
+            for (int i = minLen+1; i < maxLen; i++)
+                if(i%10 == 0)
+                    result.Add($"{i}");
+            // максимальное значение
+            result.Add($"{maxLen}");
+
+            return result.ToArray();
+        }
+
+        // массив уникальных пунктов маршрутов
+        public string[] GetPoints()
+        {
+            Dictionary<string, int> points = new();
+
+            Items.ForEach(i => points[i.Start] = points[i.Finish] = 0);
+
+            return points.Keys.ToArray();
+        }
+
         // по диапазону протяженности
         public List<TourRoute> SelectByLengthRange(int lo, int hi) =>
             Items.FindAll(i => i.Length >= lo && i.Length <= hi);

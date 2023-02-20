@@ -65,13 +65,17 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toTrayBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSelectByLengthRange = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.cmbxCategory = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.cmbxArtisan = new System.Windows.Forms.ToolStripComboBox();
+            this.cmbxLengthFrom = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.cmbxCity = new System.Windows.Forms.ToolStripComboBox();
+            this.cmbxLengthTo = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSelectByPoint = new System.Windows.Forms.ToolStripButton();
+            this.cmbxPoint = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.trayContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.развернутьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +92,7 @@
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridMain = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdSrcItems = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridSorted = new System.Windows.Forms.DataGridView();
@@ -103,7 +108,6 @@
             this.instrumentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentsControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.instrumentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.appContextMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -139,7 +143,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 452);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1226, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1473, 26);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -176,7 +180,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1226, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1473, 29);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -396,16 +400,20 @@
             this.cmbxSortField,
             this.cmbxSortOrder,
             this.toolStripSeparator2,
-            this.toolStripLabel3,
+            this.toolStripSeparator4,
+            this.btnSelectByLengthRange,
             this.toolStripLabel2,
-            this.cmbxCategory,
-            this.toolStripLabel4,
-            this.cmbxArtisan,
+            this.cmbxLengthFrom,
             this.toolStripLabel5,
-            this.cmbxCity});
+            this.cmbxLengthTo,
+            this.toolStripLabel6,
+            this.toolStripSeparator3,
+            this.btnSelectByPoint,
+            this.cmbxPoint,
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1226, 55);
+            this.toolStrip1.Size = new System.Drawing.Size(1473, 55);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -423,57 +431,86 @@
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(88, 52);
+            this.toolStripLabel1.Size = new System.Drawing.Size(91, 52);
             this.toolStripLabel1.Text = "сортировка по";
             // 
-            // toolStripLabel3
+            // toolStripSeparator4
             // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(58, 52);
-            this.toolStripLabel3.Text = "выборка:";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
+            // 
+            // btnSelectByLengthRange
+            // 
+            this.btnSelectByLengthRange.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSelectByLengthRange.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSelectByLengthRange.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectByLengthRange.Image")));
+            this.btnSelectByLengthRange.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSelectByLengthRange.Name = "btnSelectByLengthRange";
+            this.btnSelectByLengthRange.Size = new System.Drawing.Size(172, 52);
+            this.btnSelectByLengthRange.Tag = "0";
+            this.btnSelectByLengthRange.Text = "выборка по протяженности";
+            this.btnSelectByLengthRange.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(62, 52);
-            this.toolStripLabel2.Text = "категория";
+            this.toolStripLabel2.Size = new System.Drawing.Size(19, 52);
+            this.toolStripLabel2.Text = "от";
             // 
-            // cmbxCategory
+            // cmbxLengthFrom
             // 
-            this.cmbxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxCategory.Name = "cmbxCategory";
-            this.cmbxCategory.Size = new System.Drawing.Size(121, 55);
-            this.cmbxCategory.Tag = "категория";
-            this.cmbxCategory.SelectedIndexChanged += new System.EventHandler(this.SelectBy);
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(46, 52);
-            this.toolStripLabel4.Text = "мастер";
-            // 
-            // cmbxArtisan
-            // 
-            this.cmbxArtisan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxArtisan.Name = "cmbxArtisan";
-            this.cmbxArtisan.Size = new System.Drawing.Size(121, 55);
-            this.cmbxArtisan.Tag = "мастер";
-            this.cmbxArtisan.SelectedIndexChanged += new System.EventHandler(this.SelectBy);
+            this.cmbxLengthFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxLengthFrom.Name = "cmbxLengthFrom";
+            this.cmbxLengthFrom.Size = new System.Drawing.Size(75, 55);
+            this.cmbxLengthFrom.Tag = "категория";
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(39, 52);
-            this.toolStripLabel5.Text = "город";
+            this.toolStripLabel5.Size = new System.Drawing.Size(20, 52);
+            this.toolStripLabel5.Text = "до";
             // 
-            // cmbxCity
+            // cmbxLengthTo
             // 
-            this.cmbxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxCity.Name = "cmbxCity";
-            this.cmbxCity.Size = new System.Drawing.Size(121, 23);
-            this.cmbxCity.Tag = "город";
-            this.cmbxCity.SelectedIndexChanged += new System.EventHandler(this.SelectBy);
+            this.cmbxLengthTo.Name = "cmbxLengthTo";
+            this.cmbxLengthTo.Size = new System.Drawing.Size(75, 55);
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(33, 52);
+            this.toolStripLabel6.Text = "(км.)";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 55);
+            // 
+            // btnSelectByPoint
+            // 
+            this.btnSelectByPoint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSelectByPoint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSelectByPoint.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectByPoint.Image")));
+            this.btnSelectByPoint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSelectByPoint.Name = "btnSelectByPoint";
+            this.btnSelectByPoint.Size = new System.Drawing.Size(120, 52);
+            this.btnSelectByPoint.Tag = "1";
+            this.btnSelectByPoint.Text = "выборка по пункту";
+            this.btnSelectByPoint.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
+            // cmbxPoint
+            // 
+            this.cmbxPoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxPoint.Name = "cmbxPoint";
+            this.cmbxPoint.Size = new System.Drawing.Size(121, 55);
+            this.cmbxPoint.Tag = "мастер";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 55);
             // 
             // notifyIcon1
             // 
@@ -589,7 +626,7 @@
             this.fontBtn});
             this.toolStrip2.Location = new System.Drawing.Point(0, 397);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1226, 55);
+            this.toolStrip2.Size = new System.Drawing.Size(1473, 55);
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -602,7 +639,7 @@
             this.tabs.Location = new System.Drawing.Point(0, 84);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(1226, 313);
+            this.tabs.Size = new System.Drawing.Size(1473, 313);
             this.tabs.TabIndex = 18;
             // 
             // tabPage1
@@ -612,7 +649,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1218, 285);
+            this.tabPage1.Size = new System.Drawing.Size(1465, 285);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -633,7 +670,7 @@
             this.dataGridMain.Name = "dataGridMain";
             this.dataGridMain.RowTemplate.Height = 25;
             this.dataGridMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridMain.Size = new System.Drawing.Size(1212, 279);
+            this.dataGridMain.Size = new System.Drawing.Size(1459, 279);
             this.dataGridMain.TabIndex = 0;
             this.dataGridMain.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridMain_CellMouseDown);
             this.dataGridMain.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
@@ -643,6 +680,12 @@
             this.dataGridMain.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridMain_UserDeletingRow);
             this.dataGridMain.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridMain_DragDrop);
             this.dataGridMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridMain_KeyDown);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // bdSrcItems
             // 
@@ -655,7 +698,7 @@
             this.tabPage2.Controls.Add(this.dataGridSorted);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1218, 285);
+            this.tabPage2.Size = new System.Drawing.Size(1465, 285);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Упорядоченный список";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -673,7 +716,7 @@
             this.dataGridSorted.Name = "dataGridSorted";
             this.dataGridSorted.RowTemplate.Height = 25;
             this.dataGridSorted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSorted.Size = new System.Drawing.Size(1218, 285);
+            this.dataGridSorted.Size = new System.Drawing.Size(1465, 285);
             this.dataGridSorted.TabIndex = 1;
             this.dataGridSorted.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
             this.dataGridSorted.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_RowValidated);
@@ -684,7 +727,7 @@
             this.tabPage3.Controls.Add(this.dataGridSelected);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1218, 285);
+            this.tabPage3.Size = new System.Drawing.Size(1465, 285);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Выборка";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -712,7 +755,7 @@
             this.dataGridSelected.Name = "dataGridSelected";
             this.dataGridSelected.RowTemplate.Height = 25;
             this.dataGridSelected.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSelected.Size = new System.Drawing.Size(1218, 285);
+            this.dataGridSelected.Size = new System.Drawing.Size(1465, 285);
             this.dataGridSelected.TabIndex = 2;
             this.dataGridSelected.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
             this.dataGridSelected.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_RowValidated);
@@ -772,17 +815,11 @@
             this.instrumentsBindingSource1.DataMember = "Items";
             this.instrumentsBindingSource1.DataSource = this.instrumentsControllerBindingSource;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1226, 478);
+            this.ClientSize = new System.Drawing.Size(1473, 478);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -881,9 +918,8 @@
         private BindingSource bdSrcItems;
         private BindingSource instrumentsBindingSource;
         private DataGridView dataGridSorted;
-        private ToolStripComboBox cmbxCategory;
-        private ToolStripComboBox cmbxArtisan;
-        private ToolStripComboBox cmbxCity;
+        private ToolStripComboBox cmbxLengthFrom;
+        private ToolStripComboBox cmbxPoint;
         private DataGridView dataGridSelected;
         private BindingSource instrumentsBindingSource1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -900,10 +936,15 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private ToolStripLabel toolStripLabel3;
         private ToolStripLabel toolStripLabel2;
-        private ToolStripLabel toolStripLabel4;
-        private ToolStripLabel toolStripLabel5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private ToolStripComboBox cmbxLengthTo;
+        private ToolStripSeparator toolStripSeparator4;
+        private ToolStripLabel toolStripLabel5;
+        private ToolStripLabel toolStripLabel6;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripButton btnSelectByLengthRange;
+        private ToolStripButton btnSelectByPoint;
     }
 }
