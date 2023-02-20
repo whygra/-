@@ -1,0 +1,164 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="appContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>133, 17</value>
+  </metadata>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>279, 17</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>510, 17</value>
+  </metadata>
+  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>650, 17</value>
+  </metadata>
+  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>786, 17</value>
+  </metadata>
+  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>902, 17</value>
+  </metadata>
+  <metadata name="imgLstApplianceTypes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1023, 17</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 56</value>
+  </metadata>
+  <metadata name="trayContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>235, 56</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAGBgAAAEAIACICQAAFgAAACgAAAAYAAAAMAAAAAEAIAAAAAAAAAkAAMMOAADDDgAAAAAAAAAA
+        AAD////////////////////////////////4+d3/5+yH/9viRf/a4jz/4OZX/+Ppa//j6Wr/3+ZU/9nh
+        Ov/c40r/6e6S//n75P///////////////////////////////////////////////////////f31/+vv
+        mf/c5E3/5Opy//L0uP/6++P//f30//7++f/+/vj//f3z//n63//w87D/4+lq/93kUP/t8ab//v75////
+        ///////////////////////////////////5++X/4edn/+DnX//198n///77////////////////////
+        /////////////////////////v75//P1vv/e5VX/5Op0//v87/////////////////////////////r7
+        5v/f5lr/5+t8//z87v/////////////////////////+/////v//////////////////////////////
+        ///7/Of/5Olu/+HoaP/8/PD//////////////////f32/+Loaf/n7Hz/9PbH/+brg//n7Ir/5+yL/+js
+        jf/p7ZH/7fCn/+zvo//p7ZP/5+yK/+fsiP/n7Ij/5+uH/+fsiv/m64T/9PXF/+PpbP/l6nv//v78////
+        ////////7PCf/+DmWv/9/e//7/Ku/+Ppcv/v8rr/7/K5/+/yt//v8rn/7/K6/+/yvf/s8Kz/6++n/+/y
+        v//t8bH/7vG0/+3xs//j6XL/8PO0//v85f/d5VD/8PO0///////5+uP/3eRP//T2wv//////7vKp/+Hn
+        Zf/u8bT/7vG0/+zwrP/s8Kj/5+yQ/+/yuf/s8Kr/7fGy//P10P/u8rr/8PK7//Dzvf/l6n3/8POz////
+        ///w87D/3uVZ//z88P/p7pP/4+lr//7++f//////8vXC/97lYf/g523/4Odw/+Dnb//g5mj/3+Zj/+Lo
+        dP/j6Xf/4+l5/+Dmaf/f5Wb/4edt/+Hnbv/g5mj/8/bJ///////9/fL/4OZc/+7yrP/c5E7/8POt////
+        ////////8vTB/9/lav/e5WT/3eVh/97lZ//e5WT/4edx/97lZv/j6X7/4+l//97lZv/e5WP/3uVk/97l
+        Y//e5GL/8/XG////////////7PCY/+DnYv/Z4Tn/+Pra////////////9/jb/+runf/p7pj/6u6Z/+nt
+        lv/q7Zr/8vTE/+zvpv/y9MP/7fCq/+zvpv/r76X/6u+h//L1xP/z9cj/+vvq////////////9ffJ/9rh
+        Pv/d5Ev//P3w////////////8POy/9XeH//X4DD/1d4d/9fgMP/V3iL/5uuE/9riP//098//3+Za/9/m
+        X//e5VT/2eE5//v86///////////////////////+vvk/9rhO//g517//f73////////////7vKq/9Xe
+        H//o7I//1d4d/+nukP/W3iP/6O2N/9nhNf/h52f/1t4k/+Hnav/b40b/1t8l//r75v//////////////
+        /////////Pzt/9zjRP/g5lz//f32////////////7vKp/9XeIf/r76D/1t4h/+zwov/W3yf/7PCf/9zk
+        S//W3yr/0twR/+bsh//c40j/1d8j//n75P//////////////////////+/zt/9vjQ//d5Ef//P3t////
+        ////////8fS6/9vjR//t8Kb/1d4e/+zwoP/W3yb/7vKo/+Loav/e5Fb/1t4k/+vvof/c40j/1d8j//n6
+        5P//////////////////////+frh/9nhOv/Z4Tn/+PnW////////////+vvr/+vvoP/1987/3eRV/+/y
+        s//V3iH/7vKq/+ntjf/Y4Df/1d4i//Dzuf/c40j/1t8j//n65P//////////////////////9PbD/9ri
+        Qf/d5VX/7vGm/////////////////+zwpP/z9cP/6++f//r76v/o7Yz/9vjV/+/yrf/T3BP/1d4e//T2
+        zv/b40f/1t8j//r75///////////////////////6u6O/+Loa//s8J//4edj//399v///////v79/+Xq
+        f//c41D/7vKv//////////////////b41v/f5Vf/4uhp//j65P/b40X/1N0Y/+3xpv/y9b7/+/zs////
+        ///8/O3/3uVV//D0uP/7/Ov/3uVU//H0tf//////+/zu/9rjS//f5l7/+vvt////////////////////
+        /v/+/vv//v78//399v/e5VT/090W/9XeH//W3iX/8vW////////t8aD/4Odh//399v//////7/Kw/93l
+        UP/6++L//v79/+jtjP/s753//////////////////////////////////////////f/4+t//9vjT//b4
+        0//2+NT//P3z//j51f/c5En/8/XE/////////////v77/+XrfP/i6Gf//P3t//v87v/199H/////////
+        ////////////////////////////////////////////////////////+vvj/9/mWP/o7Y//////////
+        //////////////z98f/i6Gz/4uhm//r74f//////////////////////////////////////////////
+        ///////////////////4+db/4OZZ/+XrfP/9/vj////////////////////////////8/fH/5et+/97k
+        T//w87D//f3z/////////////////////////////////////////////Pzv/+7ypP/c5Er/6O2N//3+
+        9////////////////////////////////////////v78//DztP/e5Vf/4Odd/+3wm//2+M7/+vvo//z9
+        8f/8/fD/+vvm//X3yv/r75X/3+ZY/9/mXf/y9cD/////////////////////////////////////////
+        ///////////////////7/O//7fGo/9/mXf/Z4Tv/2uI+/93kS//d5Er/2uI8/9nhPf/g52T/7/Ox//z9
+        9P////////////////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAA=
+</value>
+  </data>
+  <metadata name="miniToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>381, 56</value>
+  </metadata>
+  <metadata name="imgLstStates.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>505, 56</value>
+  </metadata>
+  <metadata name="ctxMenuDgv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>626, 56</value>
+  </metadata>
+  <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>741, 56</value>
+  </metadata>
+  <metadata name="bdSrcItems.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1095, 56</value>
+  </metadata>
+  <metadata name="instrumentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="instrumentsControllerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>846, 56</value>
+  </metadata>
+  <metadata name="instrumentsBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>212, 95</value>
+  </metadata>
+</root>
