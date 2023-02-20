@@ -11,12 +11,20 @@ namespace WF230225.Controllers
 {
     public class TourOperatorController
     {
+        // сериализатор
         JsonSerializer<TourOperator> _serializer;
-        public string FilePath { get; set; }
+        // обрабатываемый объект
         TourOperator _tourOperator;
+        // путь к файлу
+        public string FilePath { get; set; }
+
+        // компаратор сортировки,
+        // для добавления нового критерия сортировки достаточно создать новый компаратор
+        public Comparer<TourRoute> SortComp { get; set; }
 
         public TourOperatorController(TourOperator tourOperator, string filePath)
         {
+            SortComp = null!;
             _tourOperator = tourOperator;
             _serializer = new();
             FilePath = filePath;
@@ -25,6 +33,7 @@ namespace WF230225.Controllers
         public TourOperatorController() : this(new(), Utils.TempFilePath)
         { }
 
+        #region геттеры и сеттеры для представлений (Views)
         // свойство для чтения коллекции
         public List<TourRoute> Items => _tourOperator.Routes;
 
@@ -32,8 +41,16 @@ namespace WF230225.Controllers
         public string Name => _tourOperator.Name;
         public string Address => _tourOperator.Address;
 
+        // изменение названия
+        public void SetName(string name) => _tourOperator.Name = name;
+        
+        // изменение адреса
+        public void SetAddress(string name) => _tourOperator.Name = name;
 
-        // сброс
+        #endregion
+
+        #region работа с файлом
+        // инициализация - открытие/создание(+заполнение) файла по-умолчанию
         public void Init(bool fill = false)
         {
             // если файл отсутствует - создаем и заполняем
@@ -55,6 +72,27 @@ namespace WF230225.Controllers
                 Deserialize();
         }
 
+        // сериализация
+        public void Serialize() => _serializer.Save(_tourOperator, FilePath);
+
+
+        // десериализация
+        public void Deserialize()
+        {
+            if (!File.Exists(FilePath))
+                throw new Exception($"Файл {FilePath} не найден");
+
+            // загрузка данных
+            var loaded = _serializer.Load(FilePath);
+            if (loaded == null)
+                throw new Exception("Ошибка десериализации");
+            _tourOperator = loaded;
+        }
+
+        #endregion
+
+
+        #region операции с коллекцией
         // установить идентификатор вновь добавленному элементу
         public void SetLastId()
         {
@@ -71,24 +109,56 @@ namespace WF230225.Controllers
         // заполнение коллекции маршрутов
         public void Fill(int n)
         {
+            _tourOperator.Routes.Clear();
 
+            _tourOperator.Routes.AddRange(RouteFactory.GetRange(n));
         }
+        #endregion
 
-        // сериализация
-        public void Serialize()
+        #region получение отсортированной коллекции
+        // компараторы сортировки:
+        // код маршрута
+        public static readonly Comparer<TourRoute> CodeComparer =
+            Comparer<TourRoute>.Create((r1, r2) => r1.Code.CompareTo(r2.Code));
+
+        // начальный пункт
+        public static readonly Comparer<TourRoute> StartComparer =
+            Comparer<TourRoute>.Create((r1, r2) => r1.Start.CompareTo(r2.Start));
+
+        // протяженность
+        public static readonly Comparer<TourRoute> LengthComparer =
+            Comparer<TourRoute>.Create((r1, r2) => r1.Length.CompareTo(r2.Length));
+
+        // вернуть отсортированный список
+        public List<TourRoute> GetSorted(bool isAscend)
         {
+            List<TourRoute> sorted = Items;
 
+            if (SortComp != null)
+            {
+                Comparer<TourRoute> comp =
+                isAscend
+                ?
+                SortComp
+                :
+                // для порядка "по убыванию" просто меняем аргументы местами
+                Comparer<TourRoute>.Create((tv1, tv2) => SortComp.Compare(tv2, tv1));
+
+                sorted.Sort(comp);
+            }
+            return sorted;
         }
+        #endregion
 
-        // десериализация
-        public void Deserialize()
-        {
+        #region выборка
+        // по диапазону протяженности
+        public List<TourRoute> SelectByLengthRange(int lo, int hi) =>
+            Items.FindAll(i => i.Length >= lo && i.Length <= hi);
 
-        }
+        // по пункту
+        public List<TourRoute> SelectByPoint(string point) =>
+            Items.FindAll(i => i.Start == point || i.Finish == point);
 
-        // TODO: методы для получения отсортированной коллекции
-
-
-
+        #endregion
     }
 }

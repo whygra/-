@@ -42,5 +42,22 @@ namespace WF230225.Models
 
         // генерация случайной протяженности
         public static int GetLength() => Utils.GetRand(10, 200);
+
+        // генерация объекта со случайными значениями полей
+        public static TourRoute GetItem() =>
+            new(0, Utils.SelectRand(Points), Utils.SelectRand(Points), GetCode(), GetLength());
+
+        // генерация коллекции объектов
+        public static TourRoute[] GetRange(int n)
+        {
+            TourRoute[] result = new TourRoute[n];
+            for (int i = 0; i < n; i++)
+            {
+                result[i] = GetItem();
+                // назначение уникальных идентификаторов
+                result[i].Id = i;
+            }
+            return result;
+        }
     }
 }
