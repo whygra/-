@@ -45,7 +45,7 @@ namespace WF230225.Controllers
         public void SetName(string name) => _tourOperator.Name = name;
         
         // изменение адреса
-        public void SetAddress(string name) => _tourOperator.Name = name;
+        public void SetAddress(string address) => _tourOperator.Address = address;
 
         #endregion
 
@@ -128,6 +128,7 @@ namespace WF230225.Controllers
         // протяженность
         public static readonly Comparer<TourRoute> LengthComparer =
             Comparer<TourRoute>.Create((r1, r2) => r1.Length.CompareTo(r2.Length));
+
 
         // вернуть отсортированный список
         public List<TourRoute> GetSorted(bool isAscend)

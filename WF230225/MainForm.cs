@@ -271,7 +271,7 @@ namespace WF230225
         {
             // диапазон протяженности
             cmbxLengthFrom.Items.Clear();
-            cmbxLengthFrom.Items.AddRange(_controller.GetRangeSteps().ToArray()[..-1]);
+            cmbxLengthFrom.Items.AddRange(_controller.GetRangeSteps().ToArray()[..^1]);
 
             cmbxLengthTo.Items.Clear();
             cmbxLengthTo.Items.AddRange(_controller.GetRangeSteps().ToArray()[1..]);
@@ -304,8 +304,8 @@ namespace WF230225
         }
 
 
-        // выборка по диапазону протяженности
-        private void SelectByЗщште(object sender, EventArgs e)
+        // выборка по пункту
+        private void SelectByPoint(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cmbxPoint.Text))
             {
@@ -317,19 +317,51 @@ namespace WF230225
 
             tabs.SelectTab(2);
         }
+
+        // срабатывание кнопки выборки по пункту при изменении элемента комбобокса 
+        private void cmbxPoint_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSelectByPoint.PerformClick();
+        }
+
         #endregion
 
         #region сортировка
-        private void SortBy(object sender, EventArgs e)
+
+        private void SelectSortField(object sender, EventArgs e)
         {
+            if (cmbxSortField.SelectedItem == null)
+                return;
+
+            _controller.SortComp = cmbxSortField.Text switch
+            {
+                "коду" => TourOperatorController.CodeComparer,
+                "начальному пункту" => TourOperatorController.StartComparer,
+                "протяженности" => TourOperatorController.LengthComparer,
+                _ => null!
+            };
+
+            if (cmbxSortOrder.SelectedIndex == -1)
+                cmbxSortOrder.SelectedIndex = 0;
+
+            Sort();
+        }
+        private void SelectSortOrder(object sender, EventArgs e)
+        {
+            if (cmbxSortField.SelectedIndex == -1)
+                cmbxSortField.Focus();
+            else
+                Sort();
+        }
+
+        private void Sort()
+        {
+            var sorted = _controller.GetSorted(cmbxSortOrder.SelectedIndex == 0);
 
             dataGridSorted.DataSource = null!;
-            dataGridSorted.DataSource = cmbxSortField switch
-            {
-                _ => new()
-            };
-            tabs.SelectTab(1);
+            dataGridSorted.DataSource = sorted;
 
+            tabs.SelectTab(1);
         }
 
         #endregion
@@ -337,12 +369,24 @@ namespace WF230225
         // вывод данных турфирмы
         private void ShowTourOperatorInfo()
         {
-            // txbxName.Text = _controller.Name;
-            // txbxAddress.Text = _controller.Address;
-            bdSrcItems.DataSource = null!;
-            bdSrcItems.DataSource = _controller.Items;
+            txbxName.Text = _controller.Name;
+            txbxAddress.Text = _controller.Address;
+            bsrcMain.DataSource = null!;
+            bsrcMain.DataSource = _controller.Items;
         }
 
+        // изменение названия и адреса
+        private void SetName(object sender, EventArgs e)
+        {
+            _controller.SetName(txbxName.Text);
+            _controller.Serialize();
+        }
+
+        private void SetAddress(object sender, EventArgs e)
+        {
+            _controller.SetAddress(txbxAddress.Text);
+            _controller.Serialize();
+        }
 
         // выход из приложения
         private void Exit(object sender, EventArgs e)
@@ -361,7 +405,6 @@ namespace WF230225
         // выбор шрифта
         private void fontBtn_Click(object sender, EventArgs e)
         {
-
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 DataGridView dgv = tabs.SelectedIndex switch
@@ -374,8 +417,6 @@ namespace WF230225
 
                 dgv.Font = fontDialog1.Font;
             }
-
-
         }
 
         // выбор цвета фона

@@ -65,7 +65,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toTrayBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSelectByLengthRange = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.cmbxLengthFrom = new System.Windows.Forms.ToolStripComboBox();
@@ -89,25 +88,36 @@
             this.backColorBtn = new System.Windows.Forms.ToolStripButton();
             this.fontBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.txbxName = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.txbxAddress = new System.Windows.Forms.ToolStripTextBox();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridMain = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdSrcItems = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsrcMain = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridSorted = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finishDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tourRouteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridSelected = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instrumentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.instrumentsControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.instrumentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tourOperatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finishDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.appContextMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -117,17 +127,17 @@
             this.trayContextMenu.SuspendLayout();
             this.ctxMenuDgv.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.toolStrip3.SuspendLayout();
             this.tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdSrcItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsrcMain)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSorted)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourRouteBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSelected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsControllerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourOperatorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripStatusLabel1
@@ -371,6 +381,7 @@
             this.cmbxSortOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxSortOrder.Name = "cmbxSortOrder";
             this.cmbxSortOrder.Size = new System.Drawing.Size(120, 55);
+            this.cmbxSortOrder.SelectedIndexChanged += new System.EventHandler(this.SelectSortOrder);
             // 
             // cmbxSortField
             // 
@@ -378,6 +389,7 @@
             this.cmbxSortField.Name = "cmbxSortField";
             this.cmbxSortField.Size = new System.Drawing.Size(121, 55);
             this.cmbxSortField.Sorted = true;
+            this.cmbxSortField.SelectedIndexChanged += new System.EventHandler(this.SelectSortField);
             // 
             // toolStripSeparator2
             // 
@@ -400,7 +412,6 @@
             this.cmbxSortField,
             this.cmbxSortOrder,
             this.toolStripSeparator2,
-            this.toolStripSeparator4,
             this.btnSelectByLengthRange,
             this.toolStripLabel2,
             this.cmbxLengthFrom,
@@ -436,11 +447,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(91, 52);
             this.toolStripLabel1.Text = "сортировка по";
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
-            // 
             // btnSelectByLengthRange
             // 
             this.btnSelectByLengthRange.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -452,6 +458,7 @@
             this.btnSelectByLengthRange.Tag = "0";
             this.btnSelectByLengthRange.Text = "выборка по протяженности";
             this.btnSelectByLengthRange.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSelectByLengthRange.Click += new System.EventHandler(this.SelectByLengthRange);
             // 
             // toolStripLabel2
             // 
@@ -499,6 +506,7 @@
             this.btnSelectByPoint.Tag = "1";
             this.btnSelectByPoint.Text = "выборка по пункту";
             this.btnSelectByPoint.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSelectByPoint.Click += new System.EventHandler(this.SelectByPoint);
             // 
             // cmbxPoint
             // 
@@ -506,6 +514,7 @@
             this.cmbxPoint.Name = "cmbxPoint";
             this.cmbxPoint.Size = new System.Drawing.Size(121, 55);
             this.cmbxPoint.Tag = "мастер";
+            this.cmbxPoint.SelectedIndexChanged += new System.EventHandler(this.cmbxPoint_SelectedIndexChanged);
             // 
             // toolStripSeparator5
             // 
@@ -630,17 +639,54 @@
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.Text = "toolStrip2";
             // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel3,
+            this.txbxName,
+            this.toolStripLabel4,
+            this.txbxAddress});
+            this.toolStrip3.Location = new System.Drawing.Point(0, 84);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(1473, 25);
+            this.toolStrip3.TabIndex = 18;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(127, 22);
+            this.toolStripLabel3.Text = "Название турфирмы: ";
+            // 
+            // txbxName
+            // 
+            this.txbxName.Name = "txbxName";
+            this.txbxName.Size = new System.Drawing.Size(180, 25);
+            this.txbxName.TextChanged += new System.EventHandler(this.SetName);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabel4.Text = "Адрес: ";
+            // 
+            // txbxAddress
+            // 
+            this.txbxAddress.Name = "txbxAddress";
+            this.txbxAddress.Size = new System.Drawing.Size(180, 25);
+            this.txbxAddress.TextChanged += new System.EventHandler(this.SetAddress);
+            // 
             // tabs
             // 
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabs.Location = new System.Drawing.Point(0, 84);
+            this.tabs.Location = new System.Drawing.Point(0, 109);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(1473, 313);
-            this.tabs.TabIndex = 18;
+            this.tabs.Size = new System.Drawing.Size(1473, 288);
+            this.tabs.TabIndex = 19;
             // 
             // tabPage1
             // 
@@ -649,7 +695,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1465, 285);
+            this.tabPage1.Size = new System.Drawing.Size(1465, 260);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -662,15 +708,19 @@
             this.dataGridMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.idDataGridViewTextBoxColumn,
+            this.startDataGridViewTextBoxColumn,
+            this.finishDataGridViewTextBoxColumn,
+            this.codeDataGridViewTextBoxColumn,
+            this.lengthDataGridViewTextBoxColumn});
             this.dataGridMain.ContextMenuStrip = this.ctxMenuDgv;
-            this.dataGridMain.DataSource = this.bdSrcItems;
+            this.dataGridMain.DataSource = this.bsrcMain;
             this.dataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridMain.Location = new System.Drawing.Point(3, 3);
             this.dataGridMain.Name = "dataGridMain";
             this.dataGridMain.RowTemplate.Height = 25;
             this.dataGridMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridMain.Size = new System.Drawing.Size(1459, 279);
+            this.dataGridMain.Size = new System.Drawing.Size(1459, 254);
             this.dataGridMain.TabIndex = 0;
             this.dataGridMain.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridMain_CellMouseDown);
             this.dataGridMain.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
@@ -681,24 +731,48 @@
             this.dataGridMain.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridMain_DragDrop);
             this.dataGridMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridMain_KeyDown);
             // 
-            // dataGridViewTextBoxColumn1
+            // idDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Идентификатор";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // bdSrcItems
+            // startDataGridViewTextBoxColumn
             // 
-            this.bdSrcItems.AllowNew = true;
-            this.bdSrcItems.DataMember = "Routes";
-            this.bdSrcItems.DataSource = typeof(WF230225.Models.TourOperator);
+            this.startDataGridViewTextBoxColumn.DataPropertyName = "Start";
+            this.startDataGridViewTextBoxColumn.HeaderText = "Начальный пункт";
+            this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
+            // 
+            // finishDataGridViewTextBoxColumn
+            // 
+            this.finishDataGridViewTextBoxColumn.DataPropertyName = "Finish";
+            this.finishDataGridViewTextBoxColumn.HeaderText = "Конечный пункт";
+            this.finishDataGridViewTextBoxColumn.Name = "finishDataGridViewTextBoxColumn";
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            // 
+            // lengthDataGridViewTextBoxColumn
+            // 
+            this.lengthDataGridViewTextBoxColumn.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn.HeaderText = "Протяженность (км.)";
+            this.lengthDataGridViewTextBoxColumn.Name = "lengthDataGridViewTextBoxColumn";
+            // 
+            // bsrcMain
+            // 
+            this.bsrcMain.DataMember = "Routes";
+            this.bsrcMain.DataSource = typeof(WF230225.Models.TourOperator);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridSorted);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1465, 285);
+            this.tabPage2.Size = new System.Drawing.Size(1465, 260);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Упорядоченный список";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -709,25 +783,64 @@
             this.dataGridSorted.AllowUserToDeleteRows = false;
             this.dataGridSorted.AllowUserToResizeColumns = false;
             this.dataGridSorted.AllowUserToResizeRows = false;
+            this.dataGridSorted.AutoGenerateColumns = false;
             this.dataGridSorted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridSorted.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSorted.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.startDataGridViewTextBoxColumn1,
+            this.finishDataGridViewTextBoxColumn1,
+            this.codeDataGridViewTextBoxColumn1,
+            this.lengthDataGridViewTextBoxColumn1});
+            this.dataGridSorted.DataSource = this.tourRouteBindingSource;
             this.dataGridSorted.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridSorted.Location = new System.Drawing.Point(0, 0);
             this.dataGridSorted.Name = "dataGridSorted";
             this.dataGridSorted.RowTemplate.Height = 25;
             this.dataGridSorted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSorted.Size = new System.Drawing.Size(1465, 285);
+            this.dataGridSorted.Size = new System.Drawing.Size(1465, 260);
             this.dataGridSorted.TabIndex = 1;
-            this.dataGridSorted.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
-            this.dataGridSorted.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_RowValidated);
-            this.dataGridSorted.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvItems_RowValidating);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // startDataGridViewTextBoxColumn1
+            // 
+            this.startDataGridViewTextBoxColumn1.DataPropertyName = "Start";
+            this.startDataGridViewTextBoxColumn1.HeaderText = "Start";
+            this.startDataGridViewTextBoxColumn1.Name = "startDataGridViewTextBoxColumn1";
+            // 
+            // finishDataGridViewTextBoxColumn1
+            // 
+            this.finishDataGridViewTextBoxColumn1.DataPropertyName = "Finish";
+            this.finishDataGridViewTextBoxColumn1.HeaderText = "Finish";
+            this.finishDataGridViewTextBoxColumn1.Name = "finishDataGridViewTextBoxColumn1";
+            // 
+            // codeDataGridViewTextBoxColumn1
+            // 
+            this.codeDataGridViewTextBoxColumn1.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn1.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn1.Name = "codeDataGridViewTextBoxColumn1";
+            // 
+            // lengthDataGridViewTextBoxColumn1
+            // 
+            this.lengthDataGridViewTextBoxColumn1.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn1.HeaderText = "Length";
+            this.lengthDataGridViewTextBoxColumn1.Name = "lengthDataGridViewTextBoxColumn1";
+            // 
+            // tourRouteBindingSource
+            // 
+            this.tourRouteBindingSource.DataSource = typeof(WF230225.Models.TourRoute);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridSelected);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1465, 285);
+            this.tabPage3.Size = new System.Drawing.Size(1465, 260);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Выборка";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -742,78 +855,53 @@
             this.dataGridSelected.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSelected.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.categoryDataGridViewComboBoxColumn2,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            this.dataGridSelected.DataSource = this.instrumentsBindingSource;
+            this.idDataGridViewTextBoxColumn2,
+            this.startDataGridViewTextBoxColumn2,
+            this.finishDataGridViewTextBoxColumn2,
+            this.codeDataGridViewTextBoxColumn2,
+            this.lengthDataGridViewTextBoxColumn2});
+            this.dataGridSelected.DataSource = this.tourRouteBindingSource;
             this.dataGridSelected.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridSelected.Location = new System.Drawing.Point(0, 0);
             this.dataGridSelected.Name = "dataGridSelected";
             this.dataGridSelected.RowTemplate.Height = 25;
             this.dataGridSelected.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSelected.Size = new System.Drawing.Size(1465, 285);
+            this.dataGridSelected.Size = new System.Drawing.Size(1465, 260);
             this.dataGridSelected.TabIndex = 2;
-            this.dataGridSelected.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItems_CellValidating);
-            this.dataGridSelected.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_RowValidated);
-            this.dataGridSelected.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvItems_RowValidating);
             // 
-            // dataGridViewTextBoxColumn7
+            // tourOperatorBindingSource
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Идентификатор";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.tourOperatorBindingSource.DataSource = typeof(WF230225.Models.TourOperator);
             // 
-            // dataGridViewTextBoxColumn8
+            // idDataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             // 
-            // categoryDataGridViewComboBoxColumn2
+            // startDataGridViewTextBoxColumn2
             // 
-            this.categoryDataGridViewComboBoxColumn2.DataPropertyName = "Category";
-            this.categoryDataGridViewComboBoxColumn2.HeaderText = "Категория";
-            this.categoryDataGridViewComboBoxColumn2.Name = "categoryDataGridViewComboBoxColumn2";
-            this.categoryDataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoryDataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.startDataGridViewTextBoxColumn2.DataPropertyName = "Start";
+            this.startDataGridViewTextBoxColumn2.HeaderText = "Start";
+            this.startDataGridViewTextBoxColumn2.Name = "startDataGridViewTextBoxColumn2";
             // 
-            // dataGridViewTextBoxColumn9
+            // finishDataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Artisan";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Мастер изготовитель";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.finishDataGridViewTextBoxColumn2.DataPropertyName = "Finish";
+            this.finishDataGridViewTextBoxColumn2.HeaderText = "Finish";
+            this.finishDataGridViewTextBoxColumn2.Name = "finishDataGridViewTextBoxColumn2";
             // 
-            // dataGridViewTextBoxColumn10
+            // codeDataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Год производства";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.codeDataGridViewTextBoxColumn2.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn2.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn2.Name = "codeDataGridViewTextBoxColumn2";
             // 
-            // dataGridViewTextBoxColumn11
+            // lengthDataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "City";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Город хранения";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "InsuranceCost";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Страховая стоимость";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // instrumentsBindingSource
-            // 
-            this.instrumentsBindingSource.DataMember = "Items";
-            this.instrumentsBindingSource.DataSource = this.instrumentsControllerBindingSource;
-            // 
-            // instrumentsBindingSource1
-            // 
-            this.instrumentsBindingSource1.DataMember = "Items";
-            this.instrumentsBindingSource1.DataSource = this.instrumentsControllerBindingSource;
+            this.lengthDataGridViewTextBoxColumn2.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn2.HeaderText = "Length";
+            this.lengthDataGridViewTextBoxColumn2.Name = "lengthDataGridViewTextBoxColumn2";
             // 
             // MainForm
             // 
@@ -821,6 +909,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1473, 478);
             this.Controls.Add(this.tabs);
+            this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -843,17 +932,18 @@
             this.ctxMenuDgv.ResumeLayout(false);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
             this.tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdSrcItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsrcMain)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSorted)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourRouteBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSelected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsControllerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instrumentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tourOperatorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -909,42 +999,50 @@
         private ToolStripButton backColorBtn;
         private ToolStripButton fontBtn;
         private ToolStrip toolStrip2;
-        private TabControl tabs;
-        private TabPage tabPage1;
-        private DataGridView dataGridMain;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private BindingSource instrumentsControllerBindingSource;
-        private BindingSource bdSrcItems;
-        private BindingSource instrumentsBindingSource;
-        private DataGridView dataGridSorted;
         private ToolStripComboBox cmbxLengthFrom;
         private ToolStripComboBox cmbxPoint;
-        private DataGridView dataGridSelected;
-        private BindingSource instrumentsBindingSource1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn categoryDataGridViewComboBoxColumn;
         private DataGridViewTextBoxColumn artisanDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn insuranceCostDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewComboBoxColumn categoryDataGridViewComboBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private ToolStripLabel toolStripLabel2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private ToolStripComboBox cmbxLengthTo;
-        private ToolStripSeparator toolStripSeparator4;
         private ToolStripLabel toolStripLabel5;
         private ToolStripLabel toolStripLabel6;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripButton btnSelectByLengthRange;
         private ToolStripButton btnSelectByPoint;
+        private ToolStrip toolStrip3;
+        private ToolStripLabel toolStripLabel3;
+        private ToolStripTextBox txbxName;
+        private ToolStripLabel toolStripLabel4;
+        private ToolStripTextBox txbxAddress;
+        private TabControl tabs;
+        private TabPage tabPage1;
+        private DataGridView dataGridMain;
+        private TabPage tabPage2;
+        private DataGridView dataGridSorted;
+        private TabPage tabPage3;
+        private DataGridView dataGridSelected;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
+        private BindingSource tourOperatorBindingSource;
+        public BindingSource bsrcMain;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn1;
+        private BindingSource tourRouteBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn2;
     }
 }

@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
-    <Folder Include="Properties\DataSources\" />
     <Folder Include="Views\" />
   </ItemGroup>
 
