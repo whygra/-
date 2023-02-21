@@ -152,16 +152,16 @@ namespace WF230225.Controllers
         #endregion
 
         #region выборка
-        // минимальная протяженность (для выборки про протяженности)
+        // минимальная протяженность (для выборки по протяженности)
         int GetMinLen()
         {
-            int minLen = 0;
+            int minLen = Items[0].Length;
             foreach (TourRoute route in Items)
                 if (route.Length < minLen) minLen = route.Length;
             return minLen;
         }
 
-        // максимальная протяженность (для выборки про протяженности)
+        // максимальная протяженность (для выборки по протяженности)
         int GetMaxLen()
         {
             int maxLen = 0;

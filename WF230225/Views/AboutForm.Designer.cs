@@ -54,7 +54,7 @@
             this.tbAbout.ReadOnly = true;
             this.tbAbout.Size = new System.Drawing.Size(312, 128);
             this.tbAbout.TabIndex = 3;
-            this.tbAbout.Text = "Задание по предмету WindowsForms на 11/02/2023.\r\n\r\nВыполнил студент группы СПД111" +
+            this.tbAbout.Text = "Задание по предмету WindowsForms на 25/02/2023.\r\n\r\nВыполнил студент группы СПД111" +
     " \r\nГрабовский Ярослав.";
             // 
             // lblAbout1

@@ -65,14 +65,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toTrayBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btnSelectByLengthRange = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.cmbxLengthFrom = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.cmbxLengthTo = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSelectByPoint = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
             this.cmbxPoint = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -97,22 +97,22 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridMain = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.finishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsrcMain = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridSorted = new System.Windows.Forms.DataGridView();
+            this.tourRouteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridSelected = new System.Windows.Forms.DataGridView();
+            this.tourOperatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finishDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lengthDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tourRouteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridSelected = new System.Windows.Forms.DataGridView();
-            this.tourOperatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finishDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -412,14 +412,14 @@
             this.cmbxSortField,
             this.cmbxSortOrder,
             this.toolStripSeparator2,
-            this.btnSelectByLengthRange,
+            this.toolStripLabel9,
+            this.toolStripLabel7,
             this.toolStripLabel2,
             this.cmbxLengthFrom,
             this.toolStripLabel5,
             this.cmbxLengthTo,
             this.toolStripLabel6,
-            this.toolStripSeparator3,
-            this.btnSelectByPoint,
+            this.toolStripLabel8,
             this.cmbxPoint,
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 29);
@@ -447,18 +447,18 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(91, 52);
             this.toolStripLabel1.Text = "сортировка по";
             // 
-            // btnSelectByLengthRange
+            // toolStripLabel9
             // 
-            this.btnSelectByLengthRange.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSelectByLengthRange.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectByLengthRange.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectByLengthRange.Image")));
-            this.btnSelectByLengthRange.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSelectByLengthRange.Name = "btnSelectByLengthRange";
-            this.btnSelectByLengthRange.Size = new System.Drawing.Size(172, 52);
-            this.btnSelectByLengthRange.Tag = "0";
-            this.btnSelectByLengthRange.Text = "выборка по протяженности";
-            this.btnSelectByLengthRange.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnSelectByLengthRange.Click += new System.EventHandler(this.SelectByLengthRange);
+            this.toolStripLabel9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripLabel9.Name = "toolStripLabel9";
+            this.toolStripLabel9.Size = new System.Drawing.Size(58, 52);
+            this.toolStripLabel9.Text = "выборка";
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.Size = new System.Drawing.Size(170, 52);
+            this.toolStripLabel7.Text = "по диапазону протяженности";
             // 
             // toolStripLabel2
             // 
@@ -472,6 +472,7 @@
             this.cmbxLengthFrom.Name = "cmbxLengthFrom";
             this.cmbxLengthFrom.Size = new System.Drawing.Size(75, 55);
             this.cmbxLengthFrom.Tag = "категория";
+            this.cmbxLengthFrom.SelectedIndexChanged += new System.EventHandler(this.SelectByLengthRange);
             // 
             // toolStripLabel5
             // 
@@ -483,6 +484,7 @@
             // 
             this.cmbxLengthTo.Name = "cmbxLengthTo";
             this.cmbxLengthTo.Size = new System.Drawing.Size(75, 55);
+            this.cmbxLengthTo.SelectedIndexChanged += new System.EventHandler(this.SelectByLengthRange);
             // 
             // toolStripLabel6
             // 
@@ -490,23 +492,11 @@
             this.toolStripLabel6.Size = new System.Drawing.Size(33, 52);
             this.toolStripLabel6.Text = "(км.)";
             // 
-            // toolStripSeparator3
+            // toolStripLabel8
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 55);
-            // 
-            // btnSelectByPoint
-            // 
-            this.btnSelectByPoint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSelectByPoint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectByPoint.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectByPoint.Image")));
-            this.btnSelectByPoint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSelectByPoint.Name = "btnSelectByPoint";
-            this.btnSelectByPoint.Size = new System.Drawing.Size(120, 52);
-            this.btnSelectByPoint.Tag = "1";
-            this.btnSelectByPoint.Text = "выборка по пункту";
-            this.btnSelectByPoint.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnSelectByPoint.Click += new System.EventHandler(this.SelectByPoint);
+            this.toolStripLabel8.Name = "toolStripLabel8";
+            this.toolStripLabel8.Size = new System.Drawing.Size(61, 52);
+            this.toolStripLabel8.Text = "по пункту";
             // 
             // cmbxPoint
             // 
@@ -514,7 +504,7 @@
             this.cmbxPoint.Name = "cmbxPoint";
             this.cmbxPoint.Size = new System.Drawing.Size(121, 55);
             this.cmbxPoint.Tag = "мастер";
-            this.cmbxPoint.SelectedIndexChanged += new System.EventHandler(this.cmbxPoint_SelectedIndexChanged);
+            this.cmbxPoint.SelectedIndexChanged += new System.EventHandler(this.SelectByPoint);
             // 
             // toolStripSeparator5
             // 
@@ -743,12 +733,16 @@
             this.startDataGridViewTextBoxColumn.DataPropertyName = "Start";
             this.startDataGridViewTextBoxColumn.HeaderText = "Начальный пункт";
             this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
+            this.startDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.startDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // finishDataGridViewTextBoxColumn
             // 
             this.finishDataGridViewTextBoxColumn.DataPropertyName = "Finish";
             this.finishDataGridViewTextBoxColumn.HeaderText = "Конечный пункт";
             this.finishDataGridViewTextBoxColumn.Name = "finishDataGridViewTextBoxColumn";
+            this.finishDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.finishDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -801,36 +795,6 @@
             this.dataGridSorted.Size = new System.Drawing.Size(1465, 260);
             this.dataGridSorted.TabIndex = 1;
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // startDataGridViewTextBoxColumn1
-            // 
-            this.startDataGridViewTextBoxColumn1.DataPropertyName = "Start";
-            this.startDataGridViewTextBoxColumn1.HeaderText = "Start";
-            this.startDataGridViewTextBoxColumn1.Name = "startDataGridViewTextBoxColumn1";
-            // 
-            // finishDataGridViewTextBoxColumn1
-            // 
-            this.finishDataGridViewTextBoxColumn1.DataPropertyName = "Finish";
-            this.finishDataGridViewTextBoxColumn1.HeaderText = "Finish";
-            this.finishDataGridViewTextBoxColumn1.Name = "finishDataGridViewTextBoxColumn1";
-            // 
-            // codeDataGridViewTextBoxColumn1
-            // 
-            this.codeDataGridViewTextBoxColumn1.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn1.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn1.Name = "codeDataGridViewTextBoxColumn1";
-            // 
-            // lengthDataGridViewTextBoxColumn1
-            // 
-            this.lengthDataGridViewTextBoxColumn1.DataPropertyName = "Length";
-            this.lengthDataGridViewTextBoxColumn1.HeaderText = "Length";
-            this.lengthDataGridViewTextBoxColumn1.Name = "lengthDataGridViewTextBoxColumn1";
-            // 
             // tourRouteBindingSource
             // 
             this.tourRouteBindingSource.DataSource = typeof(WF230225.Models.TourRoute);
@@ -873,35 +837,75 @@
             // 
             this.tourOperatorBindingSource.DataSource = typeof(WF230225.Models.TourOperator);
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Идентификатор";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // startDataGridViewTextBoxColumn1
+            // 
+            this.startDataGridViewTextBoxColumn1.DataPropertyName = "Start";
+            this.startDataGridViewTextBoxColumn1.HeaderText = "Начальный пункт";
+            this.startDataGridViewTextBoxColumn1.Name = "startDataGridViewTextBoxColumn1";
+            this.startDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // finishDataGridViewTextBoxColumn1
+            // 
+            this.finishDataGridViewTextBoxColumn1.DataPropertyName = "Finish";
+            this.finishDataGridViewTextBoxColumn1.HeaderText = "Конечный пункт";
+            this.finishDataGridViewTextBoxColumn1.Name = "finishDataGridViewTextBoxColumn1";
+            this.finishDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // codeDataGridViewTextBoxColumn1
+            // 
+            this.codeDataGridViewTextBoxColumn1.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn1.HeaderText = "Код";
+            this.codeDataGridViewTextBoxColumn1.Name = "codeDataGridViewTextBoxColumn1";
+            this.codeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lengthDataGridViewTextBoxColumn1
+            // 
+            this.lengthDataGridViewTextBoxColumn1.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn1.HeaderText = "Протяженность (км.)";
+            this.lengthDataGridViewTextBoxColumn1.Name = "lengthDataGridViewTextBoxColumn1";
+            this.lengthDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Идентификатор";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // startDataGridViewTextBoxColumn2
             // 
             this.startDataGridViewTextBoxColumn2.DataPropertyName = "Start";
-            this.startDataGridViewTextBoxColumn2.HeaderText = "Start";
+            this.startDataGridViewTextBoxColumn2.HeaderText = "Начальный пункт";
             this.startDataGridViewTextBoxColumn2.Name = "startDataGridViewTextBoxColumn2";
+            this.startDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // finishDataGridViewTextBoxColumn2
             // 
             this.finishDataGridViewTextBoxColumn2.DataPropertyName = "Finish";
-            this.finishDataGridViewTextBoxColumn2.HeaderText = "Finish";
+            this.finishDataGridViewTextBoxColumn2.HeaderText = "Конечный пункт";
             this.finishDataGridViewTextBoxColumn2.Name = "finishDataGridViewTextBoxColumn2";
+            this.finishDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // codeDataGridViewTextBoxColumn2
             // 
             this.codeDataGridViewTextBoxColumn2.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn2.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn2.HeaderText = "Код";
             this.codeDataGridViewTextBoxColumn2.Name = "codeDataGridViewTextBoxColumn2";
+            this.codeDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // lengthDataGridViewTextBoxColumn2
             // 
             this.lengthDataGridViewTextBoxColumn2.DataPropertyName = "Length";
-            this.lengthDataGridViewTextBoxColumn2.HeaderText = "Length";
+            this.lengthDataGridViewTextBoxColumn2.HeaderText = "Протяженность (км.)";
             this.lengthDataGridViewTextBoxColumn2.Name = "lengthDataGridViewTextBoxColumn2";
+            this.lengthDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -1010,10 +1014,7 @@
         private ToolStripComboBox cmbxLengthTo;
         private ToolStripLabel toolStripLabel5;
         private ToolStripLabel toolStripLabel6;
-        private ToolStripSeparator toolStripSeparator3;
         private ToolStripSeparator toolStripSeparator5;
-        private ToolStripButton btnSelectByLengthRange;
-        private ToolStripButton btnSelectByPoint;
         private ToolStrip toolStrip3;
         private ToolStripLabel toolStripLabel3;
         private ToolStripTextBox txbxName;
@@ -1026,19 +1027,22 @@
         private DataGridView dataGridSorted;
         private TabPage tabPage3;
         private DataGridView dataGridSelected;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
         private BindingSource tourOperatorBindingSource;
         public BindingSource bsrcMain;
+        private BindingSource tourRouteBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn startDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn finishDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
+        private ToolStripLabel toolStripLabel9;
+        private ToolStripLabel toolStripLabel7;
+        private ToolStripLabel toolStripLabel8;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn1;
-        private BindingSource tourRouteBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn startDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn finishDataGridViewTextBoxColumn2;

@@ -22,27 +22,55 @@ namespace WF230225
         static readonly string Untitled = "Безымянный";
         TourOperatorController _controller;
 
+        // форма для вывода при старте приложения, форма "О программе"
+        private SplashForm _splashForm = new SplashForm();
+
         public MainForm()
         {
             _controller = new();
             InitializeComponent();
 
+            // привязать _splashForm к этому окну, отобразить 
+            AddOwnedForm(_splashForm);
+            _splashForm.Show();
 
+            // Для отображения содержимого окна-заставки
+            Application.DoEvents();
         }
 
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-            _controller.Init(true);
+            Thread.Sleep(700);
 
+            _splashForm.SetPB(33);
+
+            _controller.Init(true);
             this.Text = Untitled;
+
+            _splashForm.SetPB(66);
 
             ShowTourOperatorInfo();
 
-            cmbxSortOrder.Items.AddRange(new[] { "по возрастанию", "по убыванию" });
 
+            cmbxSortOrder.Items.AddRange(new[] { "по возрастанию", "по убыванию" });
+            cmbxSortField.Items.AddRange(new[] { "коду", "начальному пункту", "протяженности" });
             UpdateSelectionComboBoxes();
 
+
+            // варианты выбора пункта в столбцах DataGridView
+            ((DataGridViewComboBoxColumn)dataGridMain.Columns["startDataGridViewTextBoxColumn"])
+                .Items.AddRange(RouteFactory.Points);
+            ((DataGridViewComboBoxColumn)dataGridMain.Columns["finishDataGridViewTextBoxColumn"])
+                .Items.AddRange(RouteFactory.Points);
+
+            _splashForm.SetPB(100);
+
+
+            Thread.Sleep(700);
+
+            // Убираем заставку до появления главной формы
+            _splashForm.Hide();
         }
 
 
@@ -316,12 +344,6 @@ namespace WF230225
             dataGridSelected.DataSource = _controller.SelectByPoint(cmbxPoint.Text);
 
             tabs.SelectTab(2);
-        }
-
-        // срабатывание кнопки выборки по пункту при изменении элемента комбобокса 
-        private void cmbxPoint_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnSelectByPoint.PerformClick();
         }
 
         #endregion
